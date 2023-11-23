@@ -30,6 +30,7 @@ public class Member {
     public void prePersist() {
         regDate = LocalDateTime.now();
     }
-    @OneToMany(mappedBy = "member")
+
+    @OneToMany(mappedBy = "member",fetch = FetchType.LAZY)
     private List<Board> boards;
 }
